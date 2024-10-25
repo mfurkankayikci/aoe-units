@@ -25,11 +25,11 @@ const previousPage = () => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center space-x-2 mt-4">
+  <div class="flex justify-center items-center flex-wrap gap-y-2 mt-4">
     <button
       @click="previousPage"
       :disabled="currentPage === 1"
-      class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:bg-gray-100"
+      class="px-4 py-2 bg-gray-200 rounded-tl rounded-bl hover:bg-gray-300 disabled:bg-gray-100"
     >
       Prev
     </button>
@@ -38,8 +38,8 @@ const previousPage = () => {
       v-for="page in totalPages"
       :key="page"
       @click="setPage(page)"
-      class="px-4 py-2 cursor-pointer"
-      :class="{ 'bg-blue-200': page === currentPage }"
+      class="px-4 py-2 cursor-pointer bg-gray-200"
+      :class="{ 'bg-[#71716a] text-white': page === currentPage }"
     >
       {{ page }}
     </span>
@@ -47,7 +47,7 @@ const previousPage = () => {
     <button
       @click="nextPage"
       :disabled="currentPage === totalPages"
-      class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:bg-gray-100"
+      class="px-4 py-2 bg-gray-200 rounded-tr rounded-br hover:bg-gray-300 disabled:bg-gray-100"
     >
       Next
     </button>

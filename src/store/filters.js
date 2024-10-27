@@ -15,6 +15,10 @@ export const useFiltersStore = defineStore("filters", {
         isvisible: false,
         value: [0, 200],
       },
+      age: {
+        isvisible: true,
+        value: "All",
+      },
     },
   }),
   actions: {

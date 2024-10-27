@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="overflow-x-auto">
+  <div class="overflow-x-auto mb-8">
     <table class="table-auto w-full">
       <thead class="text-xs font-semibold bg-[#E9E9D8]">
         <tr>
@@ -29,9 +29,16 @@ defineProps({
         </tr>
       </thead>
       <tbody class="text-sm divide-y divide-gray-100">
-        <tr v-for="unit in units" :key="unit.id" class="border-b">
+        <tr v-if="units.length === 0">
+          <td class="p-2 whitespace-nowrap text-center" colspan="4">
+            No units found.
+          </td>
+        </tr>
+        <tr v-else v-for="unit in units" :key="unit.id" class="border-b">
           <td class="p-2 whitespace-nowrap">{{ unit.id }}</td>
-          <td class="p-2 whitespace-nowrap">{{ unit.name }}</td>
+          <td class="p-2 whitespace-nowrap">
+            <RouterLink :to="`/units/${unit.id}`">{{ unit.name }}</RouterLink>
+          </td>
           <td class="p-2 whitespace-nowrap">{{ unit.age }}</td>
           <td class="p-2 whitespace-nowrap">
             <span v-for="(cost, key) in unit.cost" :key="key">

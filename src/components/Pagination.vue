@@ -25,7 +25,10 @@ const previousPage = () => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center flex-wrap gap-y-2 mt-4">
+  <div
+    v-if="totalPages > 0"
+    class="flex justify-center items-center flex-wrap gap-y-2 mt-4"
+  >
     <button
       @click="previousPage"
       :disabled="currentPage === 1"

@@ -30,7 +30,7 @@
 
             <RouterLink
               to="/units"
-              class="bg-white text-[#2f2a20] font-semibold px-4 py-2 w-fit rounded-lg"
+              class="bg-white font-semibold px-4 py-2 w-fit rounded-lg"
               >Go to Units</RouterLink
             >
           </div>

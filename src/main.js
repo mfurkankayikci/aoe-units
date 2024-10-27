@@ -4,7 +4,7 @@ import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import "@vueform/slider/themes/default.css";
-import "./style.css";
+import "./style.scss";
 
 const app = createApp(App);
 

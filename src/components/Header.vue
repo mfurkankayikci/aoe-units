@@ -12,7 +12,7 @@
         <ul class="flex gap-2">
           <RouterLink
             to="/"
-            class="text-[#2f2a20] px-4 py-2 w-fit rounded-full"
+            class="px-4 py-2 w-fit rounded-full"
             :class="{
               'bg-white font-semibold': $route.path === '/',
             }"
@@ -20,7 +20,7 @@
           >
           <RouterLink
             to="/units"
-            class="text-[#2f2a20] px-4 py-2 w-fit rounded-full"
+            class="px-4 py-2 w-fit rounded-full"
             :class="{
               'bg-white font-semibold': $route.path === '/units',
             }"

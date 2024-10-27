@@ -21,13 +21,13 @@ export const useUnitsStore = defineStore("units", {
       this.totalPages = Math.ceil(units.length / 10);
       this.units = units;
     },
+    setTotalPages(totalPages) {
+      this.totalPages = totalPages;
+    },
   },
   getters: {
     getUnits: (state) => {
-      const start = (state.currentPage - 1) * state.pageSize;
-      const end = start + state.pageSize;
-
-      return state.units.slice(start, end);
+      return state.units;
     },
   },
 });

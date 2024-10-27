@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useFiltersStore } from "../store/filters";
 
 export const useUnitsStore = defineStore("units", {
   state: () => ({
@@ -28,6 +29,13 @@ export const useUnitsStore = defineStore("units", {
   getters: {
     getUnits: (state) => {
       return state.units;
+    },
+    filteredUnits(state) {
+      const filtersStore = useFiltersStore();
+
+      return state.units.filter((unit) => {
+        return !filtersStore.age || unit.age === filtersStore.age;
+      });
     },
   },
 });
